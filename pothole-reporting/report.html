@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Pothole - Pothole Reporting System</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pothole Reporting System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="report.html">Report Pothole</a></li>
+                <li><a href="track.html">Track Report</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="form-container">
+        <h2>Report a Pothole</h2>
+        <form id="reportForm">
+            <!-- Image Upload -->
+            <label for="image">Upload Pothole Image:</label>
+            <input type="file" id="image" accept="image/*" required>
+            
+            <!-- Image Preview -->
+            <div id="imagePreviewContainer" style="display: none;">
+                <p><strong>Image Preview:</strong></p>
+                <img id="imagePreview" src="#" alt="Image Preview" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 5px;">
+            </div>
+
+            <!-- GPS Location -->
+            <label for="location">Your GPS Location:</label>
+            <input type="text" id="location" readonly placeholder="Fetching location...">
+            <button type="button" id="fetchLocation">Get Location</button>
+
+            <button type="submit">Submit Report</button>
+        </form>
+
+        <!-- Success Message -->
+        <p id="successMessage" style="display: none; color: green;">Pothole report submitted successfully!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pothole Reporting System. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/report.js"></script>
+</body>
+</html>

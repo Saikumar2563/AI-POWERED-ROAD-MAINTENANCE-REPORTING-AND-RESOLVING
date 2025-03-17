@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics - Pothole Reporting System</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Pothole Reporting System - Analytics</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="report.html">Report Pothole</a></li>
+                <li><a href="track.html">Track Report</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="analytics-container">
+        <h2>Pothole Reports Overview</h2>
+        <div class="stats">
+            <p><strong>Total Reports:</strong> <span id="totalReports">0</span></p>
+            <p><strong>Resolved Cases:</strong> <span id="resolvedReports">0</span></p>
+            <p><strong>Pending Cases:</strong> <span id="pendingReports">0</span></p>
+        </div>
+
+        <canvas id="potholeChart"></canvas>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pothole Reporting System. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/analytics.js"></script>
+</body>
+</html>

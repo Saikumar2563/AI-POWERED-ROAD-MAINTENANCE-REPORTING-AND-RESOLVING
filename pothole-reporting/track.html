@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Pothole Report - Pothole Reporting System</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pothole Reporting System</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="report.html">Report Pothole</a></li>
+                <li><a href="track.html">Track Report</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="form-container">
+        <h2>Track Your Pothole Report</h2>
+        <form id="trackForm">
+            <label for="reportId">Enter Report ID:</label>
+            <input type="text" id="reportId" required placeholder="Enter your Report ID">
+            <button type="submit">Check Status</button>
+        </form>
+
+        <div id="reportStatusContainer" class="hidden">
+            <h3>Report Status</h3>
+            <p id="reportStatus">Your report status will be displayed here.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pothole Reporting System. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/track.js"></script>
+</body>
+</html>
