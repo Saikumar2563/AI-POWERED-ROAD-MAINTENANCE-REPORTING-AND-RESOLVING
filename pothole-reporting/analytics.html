@@ -6,6 +6,63 @@
     <title>Data Analytics - Pothole Reporting System</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav ul li {
+            margin: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .analytics-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        #map {
+            height: 400px;
+            width: 600px;
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background: #f4f4f4;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,6 +87,9 @@
         </div>
 
         <canvas id="potholeChart"></canvas>
+        
+        <h2>Live Pothole Map</h2>
+        <div id="map"></div>
     </section>
 
     <footer>
@@ -37,5 +97,28 @@
     </footer>
 
     <script src="assets/js/analytics.js"></script>
+    <script>
+        var map = L.map('map').setView([17.3850, 78.4867], 13);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        function fetchPotholeLocations() {
+            var potholeLocations = [
+                { lat: 17.3850, lng: 78.4867, description: "Pothole near main road" },
+                { lat: 17.3900, lng: 78.4800, description: "Large pothole at intersection" },
+                { lat: 17.3950, lng: 78.4700, description: "Deep pothole near market" }
+            ];
+            
+            potholeLocations.forEach(function(location) {
+                L.marker([location.lat, location.lng]).addTo(map)
+                    .bindPopup(location.description)
+                    .openPopup();
+            });
+        }
+
+        fetchPotholeLocations();
+    </script>
 </body>
 </html>
